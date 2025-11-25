@@ -88,17 +88,24 @@
     </div>
 
     <script>
-        const monthlyData = @json($monthlyData->map(function($item) {
+        // Prepare raw data server-side; format labels client-side to avoid PHP syntax issues
+        const monthlyRaw = @json($monthlyData->map(function($item) {
             return [
-                'label' => new Date($item.year, $item.month - 1).toLocaleString('default', { month: 'short', year: '2-digit' }),
-                'total' => $item.total
+                'year' => $item->year,
+                'month' => $item->month,
+                'total' => $item->total
             ];
+        }));
+
+        const monthlyData = monthlyRaw.map(item => ({
+            label: new Date(item.year, item.month - 1).toLocaleString('default', { month: 'short', year: '2-digit' }),
+            total: item.total
         }));
 
         const categoryData = @json($categories->map(function($item) {
             return [
-                'label' => $item.category,
-                'total' => $item.total
+                'label' => $item->category,
+                'total' => $item->total
             ];
         }));
 

@@ -46,6 +46,7 @@
                                         <label for="category" class="form-label">Category</label>
                                         <select class="form-select" id="category" name="category" required>
                                             <option value="">Select Category</option>
+                                            <option value="Saving" {{ old('category') == 'Saving' ? 'selected' : '' }}>Saving</option>
                                             <option value="Food" {{ old('category', $transaction->category) == 'Food' ? 'selected' : '' }}>Food</option>
                                             <option value="Transportation" {{ old('category', $transaction->category) == 'Transportation' ? 'selected' : '' }}>Transportation</option>
                                             <option value="Utilities" {{ old('category', $transaction->category) == 'Utilities' ? 'selected' : '' }}>Utilities</option>

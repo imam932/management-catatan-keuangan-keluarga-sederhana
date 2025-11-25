@@ -14,10 +14,13 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         
-        $balance = Balance::firstOrCreate(
-            ['user_id' => $user->id],
-            ['initial_balance' => 0]
-        );
+        $balance = Balance::where('user_id', $user->id)->first();
+        if (!$balance) {
+            $balance = Balance::create([
+                'user_id' => $user->id,
+                'initial_balance' => 0
+            ]);
+        }
 
         $todayExpenses = Transaction::where('user_id', $user->id)
             ->whereDate('date', today())
@@ -28,7 +31,7 @@ class DashboardController extends Controller
             ->whereYear('date', now()->year)
             ->sum('amount');
 
-        $endingBalance = $balance->initial_balance - $monthExpenses;
+    $endingBalance = $balance->initial_balance - $monthExpenses;
 
         return view('dashboard', compact(
             'balance',
