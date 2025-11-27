@@ -12,4 +12,12 @@
     <li class="nav-item">
         <a href="{{ route('balances.index') }}" class="nav-link text-white">Balances</a>
     </li>
+    <li class="nav-item">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="nav-link text-white btn btn-link" style="padding:0;">
+                Logout
+            </button>
+        </form>
+    </li>
 </ul>
