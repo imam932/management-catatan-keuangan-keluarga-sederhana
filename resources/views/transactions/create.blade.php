@@ -53,6 +53,7 @@
                                             <option value="Healthcare" {{ old('category') == 'Healthcare' ? 'selected' : '' }}>Healthcare</option>
                                             <option value="Education" {{ old('category') == 'Education' ? 'selected' : '' }}>Education</option>
                                             <option value="Shopping" {{ old('category') == 'Shopping' ? 'selected' : '' }}>Shopping</option>
+                                            <option value="Social" {{ old('category') == 'Social' ? 'selected' : '' }}>Social</option>
                                             <option value="Other" {{ old('category') == 'Other' ? 'selected' : '' }}>Other</option>
                                         </select>
                                     </div>

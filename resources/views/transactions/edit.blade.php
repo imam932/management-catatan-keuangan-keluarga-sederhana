@@ -54,6 +54,7 @@
                                             <option value="Healthcare" {{ old('category', $transaction->category) == 'Healthcare' ? 'selected' : '' }}>Healthcare</option>
                                             <option value="Education" {{ old('category', $transaction->category) == 'Education' ? 'selected' : '' }}>Education</option>
                                             <option value="Shopping" {{ old('category', $transaction->category) == 'Shopping' ? 'selected' : '' }}>Shopping</option>
+                                            <option value="Social" {{ old('category', $transaction->category) == 'Social' ? 'selected' : '' }}>Social</option>
                                             <option value="Other" {{ old('category', $transaction->category) == 'Other' ? 'selected' : '' }}>Other</option>
                                         </select>
                                     </div>
