@@ -57,7 +57,7 @@
                                         <td>{{ $transaction->date->format('M d, Y') }}</td>
                                         <td>{{ $transaction->category }}</td>
                                         <td>{{ $transaction->description }}</td>
-                                        <td class="text-danger">-${{ number_format($transaction->amount, 2) }}</td>
+                                        <td class="text-danger">-Rp{{ number_format($transaction->amount, 2) }}</td>
                                         <td>
                                             <a href="{{ route('transactions.edit', $transaction) }}" class="btn btn-sm btn-outline-primary">Edit</a>
                                             <form action="{{ route('transactions.destroy', $transaction) }}" method="POST" class="d-inline">

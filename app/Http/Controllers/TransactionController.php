@@ -44,13 +44,12 @@ class TransactionController extends Controller
 
     public function edit(Transaction $transaction)
     {
-        $this->authorize('update', $transaction);
         return view('transactions.edit', compact('transaction'));
     }
 
     public function update(Request $request, Transaction $transaction)
     {
-        $this->authorize('update', $transaction);
+        // authorization performed by middleware in constructor
 
         $request->validate([
             'date' => 'required|date',
@@ -66,7 +65,7 @@ class TransactionController extends Controller
 
     public function destroy(Transaction $transaction)
     {
-        $this->authorize('delete', $transaction);
+        // authorization performed by middleware in constructor
         $transaction->delete();
         return redirect()->route('transactions.index')->with('success', 'Transaction deleted successfully!');
     }
