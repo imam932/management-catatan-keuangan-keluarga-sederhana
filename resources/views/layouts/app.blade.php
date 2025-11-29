@@ -16,7 +16,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen row">
-            <div class="col-md-2 bg-dark text-white vh-100">
+            <div class="col-md-2 bg-dark text-white">
                 <div class="p-3">
                     @include('layouts.sidebar')
                 </div>
