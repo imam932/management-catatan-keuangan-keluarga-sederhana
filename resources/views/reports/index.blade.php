@@ -79,10 +79,11 @@
             total: item.total
         }));
 
+        // Use percentage for category chart (total shown as percent of overall spending)
         const categoryData = @json($categories->map(function($item) {
             return [
                 'label' => $item->category,
-                'total' => $item->total
+                'total' => $item->percentage
             ];
         }));
 
@@ -121,7 +122,8 @@
                         '#4BC0C0',
                         '#9966FF',
                         '#FF9F40',
-                        '#FF6384',
+                        '#5e7e75ff',
+                        '#87792dff',
                         '#C9CBCF'
                     ]
                 }]

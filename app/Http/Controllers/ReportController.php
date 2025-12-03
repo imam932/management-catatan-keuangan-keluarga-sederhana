@@ -30,6 +30,14 @@ class ReportController extends Controller
             ->orderBy('total', 'desc')
             ->get();
 
+        // Convert totals to percentages of overall category spending
+        $totalSum = $categories->sum('total');
+        $categories = $categories->map(function ($item) use ($totalSum) {
+            $pct = $totalSum > 0 ? ($item->total / $totalSum) * 100 : 0;
+            $item->percentage = round($pct, 2);
+            return $item;
+        });
+
         return view('reports.index', compact('monthlyData', 'categories'));
     }
 }
