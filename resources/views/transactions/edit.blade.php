@@ -20,14 +20,13 @@
                         <label for="category" class="form-label">Category</label>
                         <select class="form-select" id="category" name="category" required>
                             <option value="">Select Category</option>
-                            <option value="Saving" {{ old('category') == 'Saving' ? 'selected' : '' }}>Saving</option>
                             <option value="Food" {{ old('category', $transaction->category) == 'Food' ? 'selected' : '' }}>Food</option>
                             <option value="Transportation" {{ old('category', $transaction->category) == 'Transportation' ? 'selected' : '' }}>Transportation</option>
                             <option value="Utilities" {{ old('category', $transaction->category) == 'Utilities' ? 'selected' : '' }}>Utilities</option>
                             <option value="Entertainment" {{ old('category', $transaction->category) == 'Entertainment' ? 'selected' : '' }}>Entertainment</option>
-                            <option value="Healthcare" {{ old('category', $transaction->category) == 'Healthcare' ? 'selected' : '' }}>Healthcare</option>
+                            <option value="Selfcare" {{ old('category', $transaction->category) == 'Selfcare' ? 'selected' : '' }}>Selfcare</option>
                             <option value="Education" {{ old('category', $transaction->category) == 'Education' ? 'selected' : '' }}>Education</option>
-                            <option value="Shopping" {{ old('category', $transaction->category) == 'Shopping' ? 'selected' : '' }}>Shopping</option>
+                            <option value="Jajanzahra" {{ old('category', $transaction->category) == 'Jajanzahra' ? 'selected' : '' }}>Jajan Zahra</option>
                             <option value="Social" {{ old('category', $transaction->category) == 'Social' ? 'selected' : '' }}>Social</option>
                             <option value="Other" {{ old('category', $transaction->category) == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>

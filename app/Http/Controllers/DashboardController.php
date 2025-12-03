@@ -31,7 +31,19 @@ class DashboardController extends Controller
             ->whereYear('date', now()->year)
             ->sum('amount');
 
-    $endingBalance = $balance->initial_balance - $monthExpenses;
+        $monthlyData = Transaction::where('user_id', $user->id)
+            ->select(
+                DB::raw('YEAR(date) as year'),
+                DB::raw('MONTH(date) as month'),
+                DB::raw('SUM(amount) as total'),
+                DB::raw('COUNT(*) as count')
+            )
+            ->groupBy('year', 'month')
+            ->orderBy('year', 'desc')
+            ->orderBy('month', 'desc')
+            ->get();
+
+        $endingBalance = $balance->initial_balance - $monthlyData->sum('total');
 
         return view('dashboard', compact(
             'balance',

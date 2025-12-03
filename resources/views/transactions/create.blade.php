@@ -19,14 +19,13 @@
                         <label for="category" class="form-label">Category</label>
                         <select class="form-select" id="category" name="category" required>
                             <option value="">Select Category</option>
-                            <option value="Saving" {{ old('category') == 'Saving' ? 'selected' : '' }}>Saving</option>
                             <option value="Food" {{ old('category') == 'Food' ? 'selected' : '' }}>Food</option>
                             <option value="Transportation" {{ old('category') == 'Transportation' ? 'selected' : '' }}>Transportation</option>
                             <option value="Utilities" {{ old('category') == 'Utilities' ? 'selected' : '' }}>Utilities</option>
                             <option value="Entertainment" {{ old('category') == 'Entertainment' ? 'selected' : '' }}>Entertainment</option>
-                            <option value="Healthcare" {{ old('category') == 'Healthcare' ? 'selected' : '' }}>Healthcare</option>
+                            <option value="Selfcare" {{ old('category') == 'Selfcare' ? 'selected' : '' }}>Selfcare</option>
                             <option value="Education" {{ old('category') == 'Education' ? 'selected' : '' }}>Education</option>
-                            <option value="Shopping" {{ old('category') == 'Shopping' ? 'selected' : '' }}>Shopping</option>
+                            <option value="Jajanzahra" {{ old('category') == 'Jajanzahra' ? 'selected' : '' }}>Jajan Zahra</option>
                             <option value="Social" {{ old('category') == 'Social' ? 'selected' : '' }}>Social</option>
                             <option value="Other" {{ old('category') == 'Other' ? 'selected' : '' }}>Other</option>
                         </select>
